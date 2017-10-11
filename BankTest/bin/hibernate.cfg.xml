@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">  
+  
+  <hibernate-configuration>  
+  
+    <session-factory>  
+     	 <property name="hibernate.hbm2ddl.auto">update</property> 
+		 <!--property name="hibernate.hbm2ddl.auto">create</property --> 
+		 <!-- create to be added to everytime create new schema and add data  -->
+		 
+     	 <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		 <property name="connection.url">jdbc:mysql://localhost:3306/banking</property>  
+	     <property name="connection.username">javauser</property>  
+	     <property name="connection.password">password</property>  
+	     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+	     <property name="show_sql">true</property>  
+	     <property name="hibernate.jdbc.batch_size">100</property>
+	   
+	   
+		 <!--mapping resource="banking.hbm.xml"/-->
+	     <mapping class="co.edureka.banking.BankUser"/>
+		 <mapping class="co.edureka.banking.BankAccount"/>
+		 <mapping class="co.edureka.banking.CreditCard"/>
+	     <!--mapping class="com.edureka.social.media.TwitterUser"/>
+	     <mapping class="com.edureka.social.media.FacebookUser"/>  
+	     <mapping class="com.edureka.accounts.BankAccount"/ -->  
+	     
+	      
+	</session-factory>  
+  
+</hibernate-configuration>  
+  
+  
+  
